@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="exports.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="SKSE64">
+      <UniqueIdentifier>{8bf218e2-3d63-491e-94c5-aae693fd9d86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{397a9eea-b026-4ff5-b1b3-c3d568571dd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Xbyak">
+      <UniqueIdentifier>{ba039329-f491-474e-877f-d721ea25b16b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FuzRoDohInternals.h" />
+    <ClInclude Include="VersionInfo.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\skse64\skse64\GameAPI.h">
+      <Filter>SKSE64</Filter>
+    </ClInclude>
+    <ClInclude Include="..\skse64\skse64\GameData.h">
+      <Filter>SKSE64</Filter>
+    </ClInclude>
+    <ClInclude Include="..\skse64\skse64\GameFormComponents.h">
+      <Filter>SKSE64</Filter>
+    </ClInclude>
+    <ClInclude Include="..\skse64\skse64\GameForms.h">
+      <Filter>SKSE64</Filter>
+    </ClInclude>
+    <ClInclude Include="..\skse64\skse64\GameObjects.h">
+      <Filter>SKSE64</Filter>
+    </ClInclude>
+    <ClInclude Include="..\skse64\skse64\GameRTTI.h">
+      <Filter>SKSE64</Filter>
+    </ClInclude>
+    <ClInclude Include="..\skse64\skse64\GameStreams.h">
+      <Filter>SKSE64</Filter>
+    </ClInclude>
+    <ClInclude Include="..\skse64\skse64\GameTypes.h">
+      <Filter>SKSE64</Filter>
+    </ClInclude>
+    <ClInclude Include="..\skse64\skse64\GameUtilities.h">
+      <Filter>SKSE64</Filter>
+    </ClInclude>
+    <ClInclude Include="..\skse64\skse64\HashUtil.h">
+      <Filter>SKSE64</Filter>
+    </ClInclude>
+    <ClInclude Include="..\skse64\skse64\NiObjects.h">
+      <Filter>SKSE64</Filter>
+    </ClInclude>
+    <ClInclude Include="..\skse64\skse64\NiTypes.h">
+      <Filter>SKSE64</Filter>
+    </ClInclude>
+    <ClInclude Include="Hooks.h" />
+    <ClInclude Include="..\skse64\xbyak\xbyak.h">
+      <Filter>Xbyak</Filter>
+    </ClInclude>
+    <ClInclude Include="..\skse64\xbyak\xbyak_bin2hex.h">
+      <Filter>Xbyak</Filter>
+    </ClInclude>
+    <ClInclude Include="..\skse64\xbyak\xbyak_mnemonic.h">
+      <Filter>Xbyak</Filter>
+    </ClInclude>
+    <ClInclude Include="..\skse64\xbyak\xbyak_util.h">
+      <Filter>Xbyak</Filter>
+    </ClInclude>
+    <ClInclude Include="..\skse64\skse64\GameReferences.h">
+      <Filter>SKSE64</Filter>
+    </ClInclude>
+    <ClInclude Include="..\skse64\skse64\GameBSExtraData.h">
+      <Filter>SKSE64</Filter>
+    </ClInclude>
+    <ClInclude Include="..\skse64\skse64\GameExtraData.h">
+      <Filter>SKSE64</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="FuzRoDohInternals.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="..\skse64\skse64\GameAPI.cpp">
+      <Filter>SKSE64</Filter>
+    </ClCompile>
+    <ClCompile Include="..\skse64\skse64\GameData.cpp">
+      <Filter>SKSE64</Filter>
+    </ClCompile>
+    <ClCompile Include="..\skse64\skse64\GameFormComponents.cpp">
+      <Filter>SKSE64</Filter>
+    </ClCompile>
+    <ClCompile Include="..\skse64\skse64\GameForms.cpp">
+      <Filter>SKSE64</Filter>
+    </ClCompile>
+    <ClCompile Include="..\skse64\skse64\GameObjects.cpp">
+      <Filter>SKSE64</Filter>
+    </ClCompile>
+    <ClCompile Include="..\skse64\skse64\GameRTTI.cpp">
+      <Filter>SKSE64</Filter>
+    </ClCompile>
+    <ClCompile Include="..\skse64\skse64\GameStreams.cpp">
+      <Filter>SKSE64</Filter>
+    </ClCompile>
+    <ClCompile Include="..\skse64\skse64\GameTypes.cpp">
+      <Filter>SKSE64</Filter>
+    </ClCompile>
+    <ClCompile Include="..\skse64\skse64\GameUtilities.cpp">
+      <Filter>SKSE64</Filter>
+    </ClCompile>
+    <ClCompile Include="..\skse64\skse64\HashUtil.cpp">
+      <Filter>SKSE64</Filter>
+    </ClCompile>
+    <ClCompile Include="..\skse64\skse64\NiObjects.cpp">
+      <Filter>SKSE64</Filter>
+    </ClCompile>
+    <ClCompile Include="..\skse64\skse64\NiTypes.cpp">
+      <Filter>SKSE64</Filter>
+    </ClCompile>
+    <ClCompile Include="Hooks.cpp" />
+    <ClCompile Include="..\skse64\skse64\GameReferences.cpp">
+      <Filter>SKSE64</Filter>
+    </ClCompile>
+    <ClCompile Include="..\skse64\skse64\GameBSExtraData.cpp">
+      <Filter>SKSE64</Filter>
+    </ClCompile>
+    <ClCompile Include="..\skse64\skse64\GameExtraData.cpp">
+      <Filter>SKSE64</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="VersionInfo.rc">
+      <Filter>Resources</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

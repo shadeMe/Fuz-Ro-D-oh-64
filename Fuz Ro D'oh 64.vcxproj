@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>Fuz Ro D'oh 64</ProjectName>
+    <ProjectGuid>{FC9A1EE6-D9DB-47F6-B0ED-8867439C43CE}</ProjectGuid>
+    <RootNamespace>Fuz Ro D'oh 64</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.21005.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>..\skse64;..\common;$(SMESundriesIncludePath);$(IncludePath)</IncludePath>
+    <TargetName>Fuz Ro D'oh</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>..\skse64;..\common;$(SMESundriesIncludePath);$(IncludePath)</IncludePath>
+    <TargetName>Fuz Ro D'oh</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)\..;$(SolutionDir)\..\..;$(SolutionDir)\skse64;$(SolutionDir)\jsoncpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;PLUGIN_EXAMPLE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForcedIncludeFiles>common/IPrefix.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <LanguageStandard>
+      </LanguageStandard>
+    </ClCompile>
+    <Link>
+      <ModuleDefinitionFile>exports.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command>cscript.exe "BuildIncrement.jse"</Command>
+    </PreBuildEvent>
+    <PreBuildEvent>
+      <Message>Setting build number...</Message>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>copy "$(TargetPath)" "$(Skyrim64Path)\Data\SKSE\Plugins\$(TargetFileName)"</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Installing DLL...</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)\..;$(SolutionDir)\..\..;$(SolutionDir)\skse64;$(SolutionDir)\jsoncpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;PLUGIN_EXAMPLE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForcedIncludeFiles>common/IPrefix.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <LanguageStandard>
+      </LanguageStandard>
+    </ClCompile>
+    <Link>
+      <ModuleDefinitionFile>exports.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <AdditionalDependencies>shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command>cscript.exe "BuildIncrement.jse"</Command>
+      <Message>Setting build number...</Message>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>copy "$(TargetPath)" "$(Skyrim64Path)\Data\SKSE\Plugins\$(TargetFileName)"</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Installing DLL...</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\skse64\skse64\GameAPI.cpp" />
+    <ClCompile Include="..\skse64\skse64\GameBSExtraData.cpp" />
+    <ClCompile Include="..\skse64\skse64\GameData.cpp" />
+    <ClCompile Include="..\skse64\skse64\GameExtraData.cpp" />
+    <ClCompile Include="..\skse64\skse64\GameFormComponents.cpp" />
+    <ClCompile Include="..\skse64\skse64\GameForms.cpp" />
+    <ClCompile Include="..\skse64\skse64\GameObjects.cpp" />
+    <ClCompile Include="..\skse64\skse64\GameReferences.cpp" />
+    <ClCompile Include="..\skse64\skse64\GameRTTI.cpp" />
+    <ClCompile Include="..\skse64\skse64\GameStreams.cpp" />
+    <ClCompile Include="..\skse64\skse64\GameTypes.cpp" />
+    <ClCompile Include="..\skse64\skse64\GameUtilities.cpp" />
+    <ClCompile Include="..\skse64\skse64\HashUtil.cpp" />
+    <ClCompile Include="..\skse64\skse64\NiObjects.cpp" />
+    <ClCompile Include="..\skse64\skse64\NiTypes.cpp" />
+    <ClCompile Include="FuzRoDohInternals.cpp" />
+    <ClCompile Include="Hooks.cpp" />
+    <ClCompile Include="Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\skse64\skse64\GameAPI.h" />
+    <ClInclude Include="..\skse64\skse64\GameBSExtraData.h" />
+    <ClInclude Include="..\skse64\skse64\GameData.h" />
+    <ClInclude Include="..\skse64\skse64\GameExtraData.h" />
+    <ClInclude Include="..\skse64\skse64\GameFormComponents.h" />
+    <ClInclude Include="..\skse64\skse64\GameForms.h" />
+    <ClInclude Include="..\skse64\skse64\GameObjects.h" />
+    <ClInclude Include="..\skse64\skse64\GameReferences.h" />
+    <ClInclude Include="..\skse64\skse64\GameRTTI.h" />
+    <ClInclude Include="..\skse64\skse64\GameStreams.h" />
+    <ClInclude Include="..\skse64\skse64\GameTypes.h" />
+    <ClInclude Include="..\skse64\skse64\GameUtilities.h" />
+    <ClInclude Include="..\skse64\skse64\HashUtil.h" />
+    <ClInclude Include="..\skse64\skse64\NiObjects.h" />
+    <ClInclude Include="..\skse64\skse64\NiTypes.h" />
+    <ClInclude Include="..\skse64\xbyak\xbyak.h" />
+    <ClInclude Include="..\skse64\xbyak\xbyak_bin2hex.h" />
+    <ClInclude Include="..\skse64\xbyak\xbyak_mnemonic.h" />
+    <ClInclude Include="..\skse64\xbyak\xbyak_util.h" />
+    <ClInclude Include="FuzRoDohInternals.h" />
+    <ClInclude Include="Hooks.h" />
+    <ClInclude Include="VersionInfo.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="exports.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="VersionInfo.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\common\common_vc14.vcxproj">
+      <Project>{472e19ab-def0-42df-819b-18722e8dc822}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\skse64\skse64_common\skse64_common.vcxproj">
+      <Project>{5fd1c08d-db80-480c-a1c6-f0920005cd13}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

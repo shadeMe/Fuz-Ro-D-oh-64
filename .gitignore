@@ -30,3 +30,15 @@
 *.exe
 *.out
 *.app
+
+[Bb]in
+
+[Dd]ebug
+[Rr]elease
+x64
+x64_v141
+.vs/
+
+BuildInfo.h
+
+BuildIncrement.jse
