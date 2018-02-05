@@ -1,7 +1,12 @@
 #include "FuzrodohInternals.h"
 
 IDebugLog				gLog;
-PluginHandle			g_pluginHandle = kPluginHandle_Invalid;
+
+namespace interfaces
+{
+	PluginHandle				kPluginHandle = kPluginHandle_Invalid;
+	SKSEMessagingInterface*		kMsgInterface = nullptr;
+}
 
 FuzRoDohINIManager		FuzRoDohINIManager::Instance;
 SubtitleHasher			SubtitleHasher::Instance;
@@ -23,6 +28,16 @@ std::string MakeSillyName()
 	for (int i = 0; i < 64; i++)
 		Out += "D'oh";
 	return Out;
+}
+
+bool CanShowDialogSubtitles()
+{
+	return GetINISetting("bDialogueSubtitles:Interface")->data.u8 != 0;
+}
+
+bool CanShowGeneralSubtitles()
+{
+	return GetINISetting("bGeneralSubtitles:Interface")->data.u8 != 0;
 }
 
 void FuzRoDohINIManager::Initialize(const char* INIPath, void* Paramenter)
@@ -67,26 +82,28 @@ SubtitleHasher::HashT SubtitleHasher::CalculateHash(const char* String)
 
 void SubtitleHasher::Add(const char* Subtitle)
 {
+	IScopedCriticalSection Guard(&Lock);
 	if (Subtitle && strlen(Subtitle) > 1 && HasMatch(Subtitle) == false)
-	{
 		Store.push_back(CalculateHash(Subtitle));
-	}
 }
 
 bool SubtitleHasher::HasMatch(const char* Subtitle)
 {
+	IScopedCriticalSection Guard(&Lock);
 	HashT Current = CalculateHash(Subtitle);
-
 	return std::find(Store.begin(), Store.end(), Current) != Store.end();
 }
 
 void SubtitleHasher::Purge(void)
 {
+	IScopedCriticalSection Guard(&Lock);
 	Store.clear();
 }
 
 void SubtitleHasher::Tick(void)
 {
+	IScopedCriticalSection Guard(&Lock);
+
 	TickCounter.Update();
 	TickReminder -= TickCounter.GetTimePassed();
 

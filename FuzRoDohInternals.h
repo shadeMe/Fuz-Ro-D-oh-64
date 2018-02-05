@@ -6,14 +6,25 @@
 #include "skse64/GameForms.h"
 #include "skse64/GameEvents.h"
 #include "skse64/GameData.h"
+#include "skse64/GameSettings.h"
 
 #include "SME_Prefix.h"
 #include "INIManager.h"
 #include "StringHelpers.h"
 #include "MiscGunk.h"
 
+#include "common/ICriticalSection.h"
+#include <thread>
+#include <chrono>
+
 extern IDebugLog						gLog;
-extern PluginHandle						g_pluginHandle;
+
+namespace interfaces
+{
+	extern PluginHandle					kPluginHandle;
+	extern SKSEMessagingInterface*		kMsgInterface;
+}
+
 
 extern SME::INI::INISetting				kWordsPerSecondSilence;
 extern SME::INI::INISetting				kSkipEmptyResponses;
@@ -35,6 +46,7 @@ class SubtitleHasher
 	using HashT = unsigned long;
 	using HashListT = std::list<HashT>;
 
+	mutable ICriticalSection			Lock;
 	HashListT							Store;
 	SME::MiscGunk::ElapsedTimeCounter	TickCounter;
 	double								TickReminder;
@@ -43,7 +55,7 @@ class SubtitleHasher
 
 	void								Purge(void);
 public:
-	SubtitleHasher() : Store(), TickCounter(), TickReminder(kPurgeInterval) {}
+	SubtitleHasher() : Lock(), Store(), TickCounter(), TickReminder(kPurgeInterval) {}
 
 	void								Add(const char* Subtitle);
 	bool								HasMatch(const char* Subtitle);
@@ -202,4 +214,6 @@ namespace override
 	STATIC_ASSERT(sizeof(MenuTopicManager) == 0xE0);
 }
 
-std::string MakeSillyName();
+std::string			MakeSillyName();
+bool				CanShowDialogSubtitles();
+bool				CanShowGeneralSubtitles();

@@ -66,6 +66,7 @@
       <ForcedIncludeFiles>common/IPrefix.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <LanguageStandard>
       </LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <ModuleDefinitionFile>exports.def</ModuleDefinitionFile>
@@ -101,6 +102,7 @@
       <ForcedIncludeFiles>common/IPrefix.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <LanguageStandard>
       </LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <ModuleDefinitionFile>exports.def</ModuleDefinitionFile>
@@ -131,6 +133,7 @@
     <ClCompile Include="..\skse64\skse64\GameObjects.cpp" />
     <ClCompile Include="..\skse64\skse64\GameReferences.cpp" />
     <ClCompile Include="..\skse64\skse64\GameRTTI.cpp" />
+    <ClCompile Include="..\skse64\skse64\GameSettings.cpp" />
     <ClCompile Include="..\skse64\skse64\GameStreams.cpp" />
     <ClCompile Include="..\skse64\skse64\GameTypes.cpp" />
     <ClCompile Include="..\skse64\skse64\GameUtilities.cpp" />
@@ -151,6 +154,7 @@
     <ClInclude Include="..\skse64\skse64\GameObjects.h" />
     <ClInclude Include="..\skse64\skse64\GameReferences.h" />
     <ClInclude Include="..\skse64\skse64\GameRTTI.h" />
+    <ClInclude Include="..\skse64\skse64\GameSettings.h" />
     <ClInclude Include="..\skse64\skse64\GameStreams.h" />
     <ClInclude Include="..\skse64\skse64\GameTypes.h" />
     <ClInclude Include="..\skse64\skse64\GameUtilities.h" />

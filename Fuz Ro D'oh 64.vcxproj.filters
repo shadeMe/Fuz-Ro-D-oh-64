@@ -77,6 +77,9 @@
     <ClInclude Include="..\skse64\skse64\GameExtraData.h">
       <Filter>SKSE64</Filter>
     </ClInclude>
+    <ClInclude Include="..\skse64\skse64\GameSettings.h">
+      <Filter>SKSE64</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FuzRoDohInternals.cpp" />
@@ -125,6 +128,9 @@
       <Filter>SKSE64</Filter>
     </ClCompile>
     <ClCompile Include="..\skse64\skse64\GameExtraData.cpp">
+      <Filter>SKSE64</Filter>
+    </ClCompile>
+    <ClCompile Include="..\skse64\skse64\GameSettings.cpp">
       <Filter>SKSE64</Filter>
     </ClCompile>
   </ItemGroup>
