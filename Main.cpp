@@ -45,7 +45,7 @@ extern "C"
 
 		if (skse->isEditor)
 			return false;
-		else if (skse->runtimeVersion != RUNTIME_VERSION_1_5_23)
+		else if (skse->runtimeVersion != RUNTIME_VERSION_1_5_39)
 		{
 			_MESSAGE("Unsupported runtime version %08X", skse->runtimeVersion);
 			return false;

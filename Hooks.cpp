@@ -5,16 +5,16 @@
 
 namespace hookedAddresses
 {
-	RelocAddr<uintptr_t>	kCachedResponseData_Ctor(MAKE_RVA(0x000000014056D4E0));
+	RelocAddr<uintptr_t>	kCachedResponseData_Ctor(MAKE_RVA(0x000000014056DA20));
 	uintptr_t				kCachedResponseData_Ctor_Hook = kCachedResponseData_Ctor + 0xEC;
 	uintptr_t				kCachedResponseData_Ctor_Ret = kCachedResponseData_Ctor + 0xF1;
 
-	RelocAddr<uintptr_t>	kUIUtils_QueueDialogSubtitles(MAKE_RVA(0x00000001408D57E0));
+	RelocAddr<uintptr_t>	kUIUtils_QueueDialogSubtitles(MAKE_RVA(0x00000001408D6040));
 	uintptr_t				kUIUtils_QueueDialogSubtitles_Hook = kUIUtils_QueueDialogSubtitles + 0x4B;
 	uintptr_t				kUIUtils_QueueDialogSubtitles_Show = kUIUtils_QueueDialogSubtitles + 0x58;
 	uintptr_t				kUIUtils_QueueDialogSubtitles_Exit = kUIUtils_QueueDialogSubtitles + 0x11C;
 
-	RelocAddr<uintptr_t>	kASCM_DisplayQueuedNPCChatterData(MAKE_RVA(0x00000001408CCEB0));
+	RelocAddr<uintptr_t>	kASCM_DisplayQueuedNPCChatterData(MAKE_RVA(0x00000001408CD710));
 	uintptr_t				kASCM_DisplayQueuedNPCChatterData_DialogSubs_Hook = kASCM_DisplayQueuedNPCChatterData + 0x1DE;
 	uintptr_t				kASCM_DisplayQueuedNPCChatterData_DialogSubs_Show = kASCM_DisplayQueuedNPCChatterData + 0x1E7;
 	uintptr_t				kASCM_DisplayQueuedNPCChatterData_DialogSubs_Exit = kASCM_DisplayQueuedNPCChatterData + 0x212;
@@ -23,7 +23,7 @@ namespace hookedAddresses
 	uintptr_t				kASCM_DisplayQueuedNPCChatterData_GeneralSubs_Show = kASCM_DisplayQueuedNPCChatterData + 0xAD;
 	uintptr_t				kASCM_DisplayQueuedNPCChatterData_GeneralSubs_Exit = kASCM_DisplayQueuedNPCChatterData + 0x1DE;
 
-	RelocAddr<uintptr_t>	kASCM_QueueNPCChatterData(MAKE_RVA(0x00000001408CC800));
+	RelocAddr<uintptr_t>	kASCM_QueueNPCChatterData(MAKE_RVA(0x00000001408CD060));
 	uintptr_t				kASCM_QueueNPCChatterData_Hook = kASCM_QueueNPCChatterData + 0x88;
 	uintptr_t				kASCM_QueueNPCChatterData_Show = kASCM_QueueNPCChatterData + 0x95;
 	uintptr_t				kASCM_QueueNPCChatterData_Exit = kASCM_QueueNPCChatterData + 0xD4;
@@ -63,7 +63,6 @@ void SneakAtackVoicePath(CachedResponseData* Data, char* VoicePathBuffer)
 #endif
 
 #ifndef NDEBUG
-#pragma message("DISABLE THIS")
 	if (!(WAVStream->valid == 0 && FUZStream->valid == 0 && XWMStream->valid == 0))
 #else
 	if (WAVStream->valid == 0 && FUZStream->valid == 0 && XWMStream->valid == 0)
