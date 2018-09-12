@@ -69,7 +69,9 @@ class BSIStream
 {
 public:
 	MEMBER_FN_PREFIX(BSIStream);
-	DEFINE_MEMBER_FN(Ctor, BSIStream*, MAKE_RVA(0x0000000140D47C00), const char* FilePath, void* ParentLocation);
+
+	// E8 ? ? ? ? 90 33 DB 38 5C 24 38
+	DEFINE_MEMBER_FN(Ctor, BSIStream*, MAKE_RVA(0x0000000140D478E0), const char* FilePath, void* ParentLocation);
 
 	// members
 	///*00*/ void**					vtbl;
