@@ -84,14 +84,14 @@ void SubtitleHasher::Add(const char* Subtitle)
 {
 	IScopedCriticalSection Guard(&Lock);
 	if (Subtitle && strlen(Subtitle) > 1 && HasMatch(Subtitle) == false)
-		Store.push_back(CalculateHash(Subtitle));
+		Store.insert(CalculateHash(Subtitle));
 }
 
 bool SubtitleHasher::HasMatch(const char* Subtitle)
 {
 	IScopedCriticalSection Guard(&Lock);
 	HashT Current = CalculateHash(Subtitle);
-	return std::find(Store.begin(), Store.end(), Current) != Store.end();
+	return Store.find(Current) != Store.end();
 }
 
 void SubtitleHasher::Purge(void)

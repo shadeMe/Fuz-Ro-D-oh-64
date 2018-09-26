@@ -16,6 +16,7 @@
 #include "common/ICriticalSection.h"
 #include <thread>
 #include <chrono>
+#include <unordered_set>
 
 extern IDebugLog						gLog;
 
@@ -44,7 +45,7 @@ class SubtitleHasher
 	static const double					kPurgeInterval;		// in ms
 
 	using HashT = unsigned long;
-	using HashListT = std::list<HashT>;
+	using HashListT = std::unordered_set<HashT>;
 
 	mutable ICriticalSection			Lock;
 	HashListT							Store;
