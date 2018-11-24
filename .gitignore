@@ -42,3 +42,5 @@ x64_v141
 BuildInfo.h
 
 BuildIncrement.jse
+
+*.aps

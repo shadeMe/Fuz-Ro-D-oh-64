@@ -4,6 +4,12 @@
 #include <ShlObj.h>
 
 
+#ifdef VR_BUILD
+	// need to define this locally as we use the original skse64_comon project as a dependency for both VR and non-VR projects
+	#define RUNTIME_VERSION MAKE_EXE_VERSION(1, 4, 15)
+#else
+	#define RUNTIME_VERSION RUNTIME_VERSION_1_5_53
+#endif
 
 extern "C"
 {
@@ -45,7 +51,7 @@ extern "C"
 
 		if (skse->isEditor)
 			return false;
-		else if (skse->runtimeVersion != RUNTIME_VERSION_1_5_53)
+		else if (skse->runtimeVersion != RUNTIME_VERSION)
 		{
 			_MESSAGE("Unsupported runtime version %08X", skse->runtimeVersion);
 			return false;

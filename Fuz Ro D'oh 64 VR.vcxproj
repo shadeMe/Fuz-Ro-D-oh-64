@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectName>Fuz Ro D'oh 64</ProjectName>
-    <ProjectGuid>{FC9A1EE6-D9DB-47F6-B0ED-8867439C43CE}</ProjectGuid>
-    <RootNamespace>Fuz Ro D'oh 64</RootNamespace>
+    <ProjectName>Fuz Ro D'oh 64 VR</ProjectName>
+    <ProjectGuid>{FC9ADEAD-D9DB-47F6-B0ED-8867439C43CE}</ProjectGuid>
+    <RootNamespace>Fuz Ro D'oh 64 VR</RootNamespace>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -46,19 +46,23 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>..\skse64;..\common;$(SMESundriesIncludePath);$(IncludePath)</IncludePath>
+    <IncludePath>..\sksevr;..\common;$(SMESundriesIncludePath);$(IncludePath)</IncludePath>
     <TargetName>Fuz Ro D'oh</TargetName>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>..\skse64;..\common;$(SMESundriesIncludePath);$(IncludePath)</IncludePath>
+    <IncludePath>..\sksevr;..\common;$(SMESundriesIncludePath);$(IncludePath)</IncludePath>
     <TargetName>Fuz Ro D'oh</TargetName>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)\..;$(SolutionDir)\..\..;$(SolutionDir)\skse64;$(SolutionDir)\jsoncpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;PLUGIN_EXAMPLE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;PLUGIN_EXAMPLE_EXPORTS;VR_BUILD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeader>
@@ -86,7 +90,7 @@
       <Command>copy "$(TargetPath)" "$(Skyrim64Path)\Data\SKSE\Plugins\$(TargetFileName)"</Command>
     </PostBuildEvent>
     <PostBuildEvent>
-      <Message>Installing DLL...</Message>
+      <Message>Installing DLL (VR)...</Message>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -94,7 +98,7 @@
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)\..;$(SolutionDir)\..\..;$(SolutionDir)\skse64;$(SolutionDir)\jsoncpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;PLUGIN_EXAMPLE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;PLUGIN_EXAMPLE_EXPORTS;VR_BUILD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>
@@ -122,47 +126,47 @@
       <Command>copy "$(TargetPath)" "$(Skyrim64Path)\Data\SKSE\Plugins\$(TargetFileName)"</Command>
     </PostBuildEvent>
     <PostBuildEvent>
-      <Message>Installing DLL...</Message>
+      <Message>Installing DLL (VR)...</Message>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\skse64\skse64\GameAPI.cpp" />
-    <ClCompile Include="..\skse64\skse64\GameBSExtraData.cpp" />
-    <ClCompile Include="..\skse64\skse64\GameData.cpp" />
-    <ClCompile Include="..\skse64\skse64\GameExtraData.cpp" />
-    <ClCompile Include="..\skse64\skse64\GameFormComponents.cpp" />
-    <ClCompile Include="..\skse64\skse64\GameForms.cpp" />
-    <ClCompile Include="..\skse64\skse64\GameObjects.cpp" />
-    <ClCompile Include="..\skse64\skse64\GameReferences.cpp" />
-    <ClCompile Include="..\skse64\skse64\GameRTTI.cpp" />
-    <ClCompile Include="..\skse64\skse64\GameSettings.cpp" />
-    <ClCompile Include="..\skse64\skse64\GameStreams.cpp" />
-    <ClCompile Include="..\skse64\skse64\GameTypes.cpp" />
-    <ClCompile Include="..\skse64\skse64\GameUtilities.cpp" />
-    <ClCompile Include="..\skse64\skse64\HashUtil.cpp" />
-    <ClCompile Include="..\skse64\skse64\NiObjects.cpp" />
-    <ClCompile Include="..\skse64\skse64\NiTypes.cpp" />
+    <ClCompile Include="..\sksevr\skse64\GameAPI.cpp" />
+    <ClCompile Include="..\sksevr\skse64\GameBSExtraData.cpp" />
+    <ClCompile Include="..\sksevr\skse64\GameData.cpp" />
+    <ClCompile Include="..\sksevr\skse64\GameExtraData.cpp" />
+    <ClCompile Include="..\sksevr\skse64\GameFormComponents.cpp" />
+    <ClCompile Include="..\sksevr\skse64\GameForms.cpp" />
+    <ClCompile Include="..\sksevr\skse64\GameObjects.cpp" />
+    <ClCompile Include="..\sksevr\skse64\GameReferences.cpp" />
+    <ClCompile Include="..\sksevr\skse64\GameRTTI.cpp" />
+    <ClCompile Include="..\sksevr\skse64\GameSettings.cpp" />
+    <ClCompile Include="..\sksevr\skse64\GameStreams.cpp" />
+    <ClCompile Include="..\sksevr\skse64\GameTypes.cpp" />
+    <ClCompile Include="..\sksevr\skse64\GameUtilities.cpp" />
+    <ClCompile Include="..\sksevr\skse64\HashUtil.cpp" />
+    <ClCompile Include="..\sksevr\skse64\NiObjects.cpp" />
+    <ClCompile Include="..\sksevr\skse64\NiTypes.cpp" />
     <ClCompile Include="FuzRoDohInternals.cpp" />
     <ClCompile Include="Hooks.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\skse64\skse64\GameAPI.h" />
-    <ClInclude Include="..\skse64\skse64\GameBSExtraData.h" />
-    <ClInclude Include="..\skse64\skse64\GameData.h" />
-    <ClInclude Include="..\skse64\skse64\GameExtraData.h" />
-    <ClInclude Include="..\skse64\skse64\GameFormComponents.h" />
-    <ClInclude Include="..\skse64\skse64\GameForms.h" />
-    <ClInclude Include="..\skse64\skse64\GameObjects.h" />
-    <ClInclude Include="..\skse64\skse64\GameReferences.h" />
-    <ClInclude Include="..\skse64\skse64\GameRTTI.h" />
-    <ClInclude Include="..\skse64\skse64\GameSettings.h" />
-    <ClInclude Include="..\skse64\skse64\GameStreams.h" />
-    <ClInclude Include="..\skse64\skse64\GameTypes.h" />
-    <ClInclude Include="..\skse64\skse64\GameUtilities.h" />
-    <ClInclude Include="..\skse64\skse64\HashUtil.h" />
-    <ClInclude Include="..\skse64\skse64\NiObjects.h" />
-    <ClInclude Include="..\skse64\skse64\NiTypes.h" />
+    <ClInclude Include="..\sksevr\skse64\GameAPI.h" />
+    <ClInclude Include="..\sksevr\skse64\GameBSExtraData.h" />
+    <ClInclude Include="..\sksevr\skse64\GameData.h" />
+    <ClInclude Include="..\sksevr\skse64\GameExtraData.h" />
+    <ClInclude Include="..\sksevr\skse64\GameFormComponents.h" />
+    <ClInclude Include="..\sksevr\skse64\GameForms.h" />
+    <ClInclude Include="..\sksevr\skse64\GameObjects.h" />
+    <ClInclude Include="..\sksevr\skse64\GameReferences.h" />
+    <ClInclude Include="..\sksevr\skse64\GameRTTI.h" />
+    <ClInclude Include="..\sksevr\skse64\GameSettings.h" />
+    <ClInclude Include="..\sksevr\skse64\GameStreams.h" />
+    <ClInclude Include="..\sksevr\skse64\GameTypes.h" />
+    <ClInclude Include="..\sksevr\skse64\GameUtilities.h" />
+    <ClInclude Include="..\sksevr\skse64\HashUtil.h" />
+    <ClInclude Include="..\sksevr\skse64\NiObjects.h" />
+    <ClInclude Include="..\sksevr\skse64\NiTypes.h" />
     <ClInclude Include="..\skse64\xbyak\xbyak.h" />
     <ClInclude Include="..\skse64\xbyak\xbyak_bin2hex.h" />
     <ClInclude Include="..\skse64\xbyak\xbyak_mnemonic.h" />
@@ -175,13 +179,16 @@
     <None Include="exports.def" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="VersionInfo.rc" />
+    <ResourceCompile Include="VersionInfo.rc">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">VR_BUILD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">VR_BUILD</PreprocessorDefinitions>
+    </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\common\common_vc14.vcxproj">
       <Project>{472e19ab-def0-42df-819b-18722e8dc822}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\skse64\skse64_common\skse64_common.vcxproj">
+    <ProjectReference Include="..\sksevr\skse64_common\skse64_common.vcxproj">
       <Project>{5fd1c08d-db80-480c-a1c6-f0920005cd13}</Project>
     </ProjectReference>
   </ItemGroup>

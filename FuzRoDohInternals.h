@@ -8,10 +8,10 @@
 #include "skse64/GameData.h"
 #include "skse64/GameSettings.h"
 
-#include "SME_Prefix.h"
-#include "INIManager.h"
-#include "StringHelpers.h"
-#include "MiscGunk.h"
+#include <SME_Prefix.h>
+#include <INIManager.h>
+#include <StringHelpers.h>
+#include <MiscGunk.h>
 
 #include "common/ICriticalSection.h"
 #include <thread>
@@ -31,6 +31,12 @@ extern SME::INI::INISetting				kWordsPerSecondSilence;
 extern SME::INI::INISetting				kSkipEmptyResponses;
 
 #define MAKE_RVA(addr)		addr - 0x140000000i64
+
+#ifdef VR_BUILD
+#define ADDR_PAIR(NON_VR, VR)	MAKE_RVA(VR)
+#else
+#define ADDR_PAIR(NON_VR, VR)	MAKE_RVA(NON_VR)
+#endif
 
 class FuzRoDohINIManager : public SME::INI::INIManager
 {
@@ -72,7 +78,7 @@ public:
 	MEMBER_FN_PREFIX(BSIStream);
 
 	// E8 ? ? ? ? 90 33 DB 38 5C 24 38
-	DEFINE_MEMBER_FN(Ctor, BSIStream*, MAKE_RVA(0x0000000140D478E0), const char* FilePath, void* ParentLocation);
+	DEFINE_MEMBER_FN(Ctor, BSIStream*, ADDR_PAIR(0x0000000140D478E0, 0x0000000140D90AD0), const char* FilePath, void* ParentLocation);
 
 	// members
 	///*00*/ void**					vtbl;

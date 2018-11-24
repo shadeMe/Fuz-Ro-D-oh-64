@@ -1,23 +1,23 @@
 #include "Hooks.h"
-#include "skse64/xbyak/xbyak.h"
-#include "skse64/skse64_common/BranchTrampoline.h"
-#include "skse64/skse64_common/Relocation.h"
+#include "xbyak/xbyak.h"
+#include "skse64_common/BranchTrampoline.h"
+#include "skse64_common/Relocation.h"
 
 namespace hookedAddresses
 {
 	// E8 ? ? ? ? 48 8B F8 EB 02 33 FF 48 85 FF
-	RelocAddr<uintptr_t>	kCachedResponseData_Ctor(MAKE_RVA(0x000000014056D760));
+	RelocAddr<uintptr_t>	kCachedResponseData_Ctor(ADDR_PAIR(0x000000014056D760, 0x0000000140573B70));
 	uintptr_t				kCachedResponseData_Ctor_Hook = kCachedResponseData_Ctor + 0xEC;
 	uintptr_t				kCachedResponseData_Ctor_Ret = kCachedResponseData_Ctor + 0xF1;
 
-	// E8 ? ? ? ? EB 42 45 84 ED
-	RelocAddr<uintptr_t>	kUIUtils_QueueDialogSubtitles(MAKE_RVA(0x00000001408D5D80));
+	// E8 ? ? ? ? EB 42 45 84 ED (VR Build - E8 ? ? ? ? EB 42 45 84 FF)
+	RelocAddr<uintptr_t>	kUIUtils_QueueDialogSubtitles(ADDR_PAIR(0x00000001408D5D80, 0x00000001409037F0));
 	uintptr_t				kUIUtils_QueueDialogSubtitles_Hook = kUIUtils_QueueDialogSubtitles + 0x4B;
 	uintptr_t				kUIUtils_QueueDialogSubtitles_Show = kUIUtils_QueueDialogSubtitles + 0x58;
 	uintptr_t				kUIUtils_QueueDialogSubtitles_Exit = kUIUtils_QueueDialogSubtitles + 0x11C;
 
 	// E8 ? ? ? ? 84 C0 75 42 48 8B 2D ? ? ? ?
-	RelocAddr<uintptr_t>	kASCM_DisplayQueuedNPCChatterData(MAKE_RVA(0x00000001408CD450));
+	RelocAddr<uintptr_t>	kASCM_DisplayQueuedNPCChatterData(ADDR_PAIR(0x00000001408CD450, 0x00000001408FA330));
 	uintptr_t				kASCM_DisplayQueuedNPCChatterData_DialogSubs_Hook = kASCM_DisplayQueuedNPCChatterData + 0x1DE;
 	uintptr_t				kASCM_DisplayQueuedNPCChatterData_DialogSubs_Show = kASCM_DisplayQueuedNPCChatterData + 0x1E7;
 	uintptr_t				kASCM_DisplayQueuedNPCChatterData_DialogSubs_Exit = kASCM_DisplayQueuedNPCChatterData + 0x212;
@@ -27,7 +27,7 @@ namespace hookedAddresses
 	uintptr_t				kASCM_DisplayQueuedNPCChatterData_GeneralSubs_Exit = kASCM_DisplayQueuedNPCChatterData + 0x1DE;
 
 	// E8 ? ? ? ? F3 0F 10 35 ? ? ? ? 48 8D 4E 28
-	RelocAddr<uintptr_t>	kASCM_QueueNPCChatterData(MAKE_RVA(0x00000001408CCDA0));
+	RelocAddr<uintptr_t>	kASCM_QueueNPCChatterData(ADDR_PAIR(0x00000001408CCDA0, 0x00000001408F9C60));
 	uintptr_t				kASCM_QueueNPCChatterData_Hook = kASCM_QueueNPCChatterData + 0x88;
 	uintptr_t				kASCM_QueueNPCChatterData_Show = kASCM_QueueNPCChatterData + 0x95;
 	uintptr_t				kASCM_QueueNPCChatterData_Exit = kASCM_QueueNPCChatterData + 0xD4;

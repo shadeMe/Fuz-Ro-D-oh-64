@@ -17,12 +17,18 @@
 #define VERSION_MINOR               3
 
 #define VER_COMPANYNAME_STR         "Imitation Camel"
-#define VER_FILE_DESCRIPTION_STR    "A plugin for the Skyrim Script Extender 64"
+#ifdef VR_BUILD
+	#define VER_FILE_DESCRIPTION_STR    "A plugin for the Skyrim Script Extender VR"
+#else
+#pragma message("org version")
+	#define VER_FILE_DESCRIPTION_STR    "A plugin for the Skyrim Script Extender 64"
+#endif
 #define VER_FILE_VERSION            VERSION_MAJOR, VERSION_MINOR, VERSION_REVISION, VERSION_BUILD
 #define VER_FILE_VERSION_STR        STRINGIZE(VERSION_MAJOR)        \
-                                    "." STRINGIZE(VERSION_MINOR)    \
-                                    "." STRINGIZE(VERSION_REVISION) \
-                                    "." STRINGIZE(VERSION_BUILD)    \
+									"." STRINGIZE(VERSION_MINOR)    \
+									"." STRINGIZE(VERSION_REVISION) \
+									"." STRINGIZE(VERSION_BUILD)    \
+
 
 #define VER_PRODUCTNAME_STR         "Fuz Ro D'oh"
 #define VER_PRODUCT_VERSION         VER_FILE_VERSION
