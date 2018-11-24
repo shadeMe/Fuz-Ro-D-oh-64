@@ -37,7 +37,11 @@ extern "C"
 
 	bool SKSEPlugin_Query(const SKSEInterface * skse, PluginInfo * info)
 	{
+#ifdef VR_BUILD
+		gLog.OpenRelative(CSIDL_MYDOCUMENTS, "\\My Games\\Skyrim VR\\SKSE\\Fuz Ro D-oh.log");
+#else
 		gLog.OpenRelative(CSIDL_MYDOCUMENTS, "\\My Games\\Skyrim Special Edition\\SKSE\\Fuz Ro D-oh.log");
+#endif
 		_MESSAGE("%s Initializing...", MakeSillyName().c_str());
 
 		// populate info structure
