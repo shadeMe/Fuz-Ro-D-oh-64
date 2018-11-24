@@ -1,6 +1,10 @@
 #pragma once
 #include "skse64/PluginAPI.h"
-#include "skse64_common/skse_version.h"
+#ifdef VR_BUILD
+#include "sksevr/skse64_common/skse_version.h"
+#else
+#include "skse64/skse64_common/skse_version.h"
+#endif
 #include "skse64/GameAPI.h"
 #include "skse64/GameTypes.h"
 #include "skse64/GameForms.h"
