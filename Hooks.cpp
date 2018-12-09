@@ -216,7 +216,11 @@ bool InstallHooks()
 				PUSH_VOLATILE;
 				xor(rcx, rcx);
 				xor(rdx, rdx);
+#ifdef VR_BUILD
+				mov(r8, rbp);	// subtitle
+#else
 				mov(r8, r14);	// subtitle
+#endif
 				mov(rax, (uintptr_t)ShouldForceSubs);
 				call(rax);
 				POP_VOLATILE;

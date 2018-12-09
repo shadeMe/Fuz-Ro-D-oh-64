@@ -14,13 +14,12 @@
 #define STRINGIZE(s) STRINGIZE2(s)
 
 #define VERSION_MAJOR               1
-#define VERSION_MINOR               3
+#define VERSION_MINOR               4
 
 #define VER_COMPANYNAME_STR         "Imitation Camel"
 #ifdef VR_BUILD
 	#define VER_FILE_DESCRIPTION_STR    "A plugin for the Skyrim Script Extender VR"
 #else
-#pragma message("org version")
 	#define VER_FILE_DESCRIPTION_STR    "A plugin for the Skyrim Script Extender 64"
 #endif
 #define VER_FILE_VERSION            VERSION_MAJOR, VERSION_MINOR, VERSION_REVISION, VERSION_BUILD
