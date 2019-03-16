@@ -82,7 +82,7 @@ public:
 	MEMBER_FN_PREFIX(BSIStream);
 
 	// E8 ? ? ? ? 90 33 DB 38 5C 24 38
-	DEFINE_MEMBER_FN(Ctor, BSIStream*, ADDR_PAIR(0x0000000140D478E0, 0x0000000140D90AD0), const char* FilePath, void* ParentLocation);
+	DEFINE_MEMBER_FN(Ctor, BSIStream*, ADDR_PAIR(0x0000000140D476F0, 0x0000000140D90AD0), const char* FilePath, void* ParentLocation);
 
 	// members
 	///*00*/ void**					vtbl;
