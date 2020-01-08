@@ -14,7 +14,7 @@
 #define STRINGIZE(s) STRINGIZE2(s)
 
 #define VERSION_MAJOR               1
-#define VERSION_MINOR               5
+#define VERSION_MINOR               7
 
 #define VER_COMPANYNAME_STR         "Imitation Camel"
 #ifdef VR_BUILD
