@@ -13,8 +13,13 @@ namespace hookedAddresses
 	// E8 ? ? ? ? EB 42 45 84 ED (VR Build - E8 ? ? ? ? EB 42 45 84 FF)
 	RelocAddr<uintptr_t>	kUIUtils_QueueDialogSubtitles(ADDR_PAIR(0x00000001408D5B90, 0x00000001409037F0));
 	uintptr_t				kUIUtils_QueueDialogSubtitles_Hook = kUIUtils_QueueDialogSubtitles + 0x4B;
+#ifdef VR_BUILD
+	uintptr_t				kUIUtils_QueueDialogSubtitles_Show = kUIUtils_QueueDialogSubtitles + 0x6B;
+	uintptr_t				kUIUtils_QueueDialogSubtitles_Exit = kUIUtils_QueueDialogSubtitles + 0x12F;
+#else
 	uintptr_t				kUIUtils_QueueDialogSubtitles_Show = kUIUtils_QueueDialogSubtitles + 0x58;
 	uintptr_t				kUIUtils_QueueDialogSubtitles_Exit = kUIUtils_QueueDialogSubtitles + 0x11C;
+#endif
 
 	// E8 ? ? ? ? 84 C0 75 42 48 8B 2D ? ? ? ?
 	RelocAddr<uintptr_t>	kASCM_DisplayQueuedNPCChatterData(ADDR_PAIR(0x00000001408CD260, 0x00000001408FA330));
