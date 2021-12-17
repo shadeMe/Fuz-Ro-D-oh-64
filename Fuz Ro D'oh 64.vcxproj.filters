@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <None Include="exports.def" />
-  </ItemGroup>
-  <ItemGroup>
     <Filter Include="SKSE64">
       <UniqueIdentifier>{8bf218e2-3d63-491e-94c5-aae693fd9d86}</UniqueIdentifier>
     </Filter>
@@ -78,6 +75,9 @@
       <Filter>SKSE64</Filter>
     </ClInclude>
     <ClInclude Include="..\skse64\skse64\GameSettings.h">
+      <Filter>SKSE64</Filter>
+    </ClInclude>
+    <ClInclude Include="..\skse64\skse64\PluginAPI.h">
       <Filter>SKSE64</Filter>
     </ClInclude>
   </ItemGroup>

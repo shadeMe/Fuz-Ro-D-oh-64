@@ -71,7 +71,8 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
-      <ModuleDefinitionFile>exports.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <AdditionalDependencies>shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -107,7 +108,8 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
-      <ModuleDefinitionFile>exports.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
@@ -163,6 +165,7 @@
     <ClInclude Include="..\skse64\skse64\HashUtil.h" />
     <ClInclude Include="..\skse64\skse64\NiObjects.h" />
     <ClInclude Include="..\skse64\skse64\NiTypes.h" />
+    <ClInclude Include="..\skse64\skse64\PluginAPI.h" />
     <ClInclude Include="..\skse64\xbyak\xbyak.h" />
     <ClInclude Include="..\skse64\xbyak\xbyak_bin2hex.h" />
     <ClInclude Include="..\skse64\xbyak\xbyak_mnemonic.h" />
@@ -170,9 +173,6 @@
     <ClInclude Include="FuzRoDohInternals.h" />
     <ClInclude Include="Hooks.h" />
     <ClInclude Include="VersionInfo.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="exports.def" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="VersionInfo.rc" />

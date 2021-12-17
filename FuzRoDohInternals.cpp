@@ -27,9 +27,6 @@ std::string MakeSillyName()
 	std::string Out("Fuz Ro ");
 	for (int i = 0; i < 64; i++)
 		Out += "D'oh";
-#ifdef VR_BUILD
-	Out += " (for Skyrim VR)";
-#endif
 	return Out;
 }
 

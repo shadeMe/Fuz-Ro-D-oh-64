@@ -1,10 +1,6 @@
 #pragma once
 #include "skse64/PluginAPI.h"
-#ifdef VR_BUILD
-#include "sksevr/skse64_common/skse_version.h"
-#else
 #include "skse64/skse64_common/skse_version.h"
-#endif
 #include "skse64/GameAPI.h"
 #include "skse64/GameTypes.h"
 #include "skse64/GameForms.h"
@@ -36,11 +32,6 @@ extern SME::INI::INISetting				kSkipEmptyResponses;
 
 #define MAKE_RVA(addr)		addr - 0x140000000i64
 
-#ifdef VR_BUILD
-#define ADDR_PAIR(NON_VR, VR)	MAKE_RVA(VR)
-#else
-#define ADDR_PAIR(NON_VR, VR)	MAKE_RVA(NON_VR)
-#endif
 
 class FuzRoDohINIManager : public SME::INI::INIManager
 {
@@ -82,7 +73,7 @@ public:
 	MEMBER_FN_PREFIX(BSIStream);
 
 	// E8 ? ? ? ? 90 33 DB 38 5C 24 38
-	DEFINE_MEMBER_FN(Ctor, BSIStream*, ADDR_PAIR(0x0000000140D47BA0, 0x0000000140D90AD0), const char* FilePath, void* ParentLocation);
+	DEFINE_MEMBER_FN(Ctor, BSIStream*, MAKE_RVA(0x0000000140D81580), const char* FilePath, void* ParentLocation);
 
 	// members
 	///*00*/ void**					vtbl;

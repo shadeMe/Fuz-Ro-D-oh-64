@@ -4,12 +4,6 @@
 #include <ShlObj.h>
 
 
-#ifdef VR_BUILD
-	#define RUNTIME_VERSION RUNTIME_VR_VERSION_1_4_15
-#else
-	#define RUNTIME_VERSION RUNTIME_VERSION_1_5_97
-#endif
-
 extern "C"
 {
 	void MessageHandler(SKSEMessagingInterface::Message * msg)
@@ -35,31 +29,16 @@ extern "C"
 		}
 	}
 
-	bool SKSEPlugin_Query(const SKSEInterface * skse, PluginInfo * info)
+	__declspec(dllexport) bool SKSEPlugin_Load(const SKSEInterface * skse)
 	{
-#ifdef VR_BUILD
-		gLog.OpenRelative(CSIDL_MYDOCUMENTS, "\\My Games\\Skyrim VR\\SKSE\\Fuz Ro D-oh.log");
-#else
 		gLog.OpenRelative(CSIDL_MYDOCUMENTS, "\\My Games\\Skyrim Special Edition\\SKSE\\Fuz Ro D-oh.log");
-#endif
-		_MESSAGE("%s Initializing...", MakeSillyName().c_str());
 
-		// populate info structure
-		info->infoVersion = PluginInfo::kInfoVersion;
-		info->name = "Fuz Ro D'oh";
-		info->version = PACKED_SME_VERSION;
+		_MESSAGE("%s Initializing...", MakeSillyName().c_str());
 
 		interfaces::kPluginHandle = skse->GetPluginHandle();
 		interfaces::kMsgInterface = (SKSEMessagingInterface*)skse->QueryInterface(kInterface_Messaging);
 
-		if (skse->isEditor)
-			return false;
-		else if (skse->runtimeVersion != RUNTIME_VERSION)
-		{
-			_MESSAGE("Unsupported runtime version %08X", skse->runtimeVersion);
-			return false;
-		}
-		else if (!interfaces::kMsgInterface)
+		if (!interfaces::kMsgInterface)
 		{
 			_MESSAGE("Couldn't initialize messaging interface");
 			return false;
@@ -69,12 +48,7 @@ extern "C"
 			_MESSAGE("Messaging interface too old (%d expected %d)", interfaces::kMsgInterface->interfaceVersion, 2);
 			return false;
 		}
-		// supported runtime version
-		return true;
-	}
 
-	bool SKSEPlugin_Load(const SKSEInterface * skse)
-	{
 		_MESSAGE("Initializing INI Manager");
 		FuzRoDohINIManager::Instance.Initialize("Data\\SKSE\\Plugins\\Fuz Ro D'oh.ini", nullptr);
 
@@ -89,4 +63,16 @@ extern "C"
 		return true;
 	}
 
+	__declspec(dllexport) SKSEPluginVersionData SKSEPlugin_Version =
+	{
+		SKSEPluginVersionData::kVersion,
+
+		PACKED_SME_VERSION,
+		"Fuz Ro D'oh",
+		"shadeMe",
+		"",
+		0,	// Version-dependent
+		{ RUNTIME_VERSION_1_6_342, 0 },
+		0,
+	};
 };
