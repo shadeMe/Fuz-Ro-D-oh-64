@@ -72,7 +72,7 @@ extern "C"
 		"shadeMe",
 		"",
 		0,	// Version-dependent
-		{ RUNTIME_VERSION_1_6_342, 0 },
+		{ RUNTIME_VERSION_1_6_353, 0 },
 		0,
 	};
 };
