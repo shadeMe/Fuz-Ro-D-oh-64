@@ -154,8 +154,8 @@ bool ShouldForceSubs(NPCChatterData* ChatterData, UInt32 ForceRegardless, const 
 	return Result;
 }
 
-#define PUSH_VOLATILE		push(rcx); push(rdx); push(r8);
-#define POP_VOLATILE		pop(r8); pop(rdx); pop(rcx);
+#define PUSH_VOLATILE		push(rcx); push(rdx); push(r8); sub(rsp, 0x20);
+#define POP_VOLATILE		add(rsp, 0x20); pop(r8); pop(rdx); pop(rcx); 
 
 bool InstallHooks()
 {
