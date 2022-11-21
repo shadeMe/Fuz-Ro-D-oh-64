@@ -33,7 +33,7 @@ extern "C"
 	{
 		gLog.OpenRelative(CSIDL_MYDOCUMENTS, "\\My Games\\Skyrim Special Edition\\SKSE\\Fuz Ro D-oh.log");
 
-		_MESSAGE("%s Initializing...", MakeSillyName().c_str());
+		_MESSAGE("%s (GOG Edition) Initializing...", MakeSillyName().c_str());
 
 		interfaces::kPluginHandle = skse->GetPluginHandle();
 		interfaces::kMsgInterface = (SKSEMessagingInterface*)skse->QueryInterface(kInterface_Messaging);
@@ -73,7 +73,7 @@ extern "C"
 		"",
 		0,	// Version-dependent
 		0,
-		{ RUNTIME_VERSION_1_6_640, 0 },
+		{ RUNTIME_VERSION_1_6_659_GOG, 0 },
 		0,
 	};
 };
