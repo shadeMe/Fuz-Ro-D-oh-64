@@ -74,7 +74,11 @@ public:
 	MEMBER_FN_PREFIX(BSIStream);
 
 	// E8 ? ? ? ? 90 33 DB 38 5C 24 38
+<<<<<<< HEAD
 	DEFINE_MEMBER_FN(Ctor, BSIStream*, MAKE_RVA(0x0000000140E20C10), const char* FilePath, void* ParentLocation);
+=======
+	DEFINE_MEMBER_FN(Ctor, BSIStream*, MAKE_RVA(0x0000000140D927F0), const char* FilePath, void* ParentLocation);
+>>>>>>> 0fb2581 (Add support for GOG edition 1.6.659)
 
 	// members
 	///*00*/ void**					vtbl;
