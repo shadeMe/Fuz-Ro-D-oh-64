@@ -16,121 +16,121 @@
     <ClInclude Include="VersionInfo.h">
       <Filter>Resources</Filter>
     </ClInclude>
-    <ClInclude Include="..\skse64\skse64\GameAPI.h">
+    <ClInclude Include="..\skse64-gog\skse64\GameAPI.h">
       <Filter>SKSE64</Filter>
     </ClInclude>
-    <ClInclude Include="..\skse64\skse64\GameData.h">
+    <ClInclude Include="..\skse64-gog\skse64\GameData.h">
       <Filter>SKSE64</Filter>
     </ClInclude>
-    <ClInclude Include="..\skse64\skse64\GameFormComponents.h">
+    <ClInclude Include="..\skse64-gog\skse64\GameFormComponents.h">
       <Filter>SKSE64</Filter>
     </ClInclude>
-    <ClInclude Include="..\skse64\skse64\GameForms.h">
+    <ClInclude Include="..\skse64-gog\skse64\GameForms.h">
       <Filter>SKSE64</Filter>
     </ClInclude>
-    <ClInclude Include="..\skse64\skse64\GameObjects.h">
+    <ClInclude Include="..\skse64-gog\skse64\GameObjects.h">
       <Filter>SKSE64</Filter>
     </ClInclude>
-    <ClInclude Include="..\skse64\skse64\GameRTTI.h">
+    <ClInclude Include="..\skse64-gog\skse64\GameRTTI.h">
       <Filter>SKSE64</Filter>
     </ClInclude>
-    <ClInclude Include="..\skse64\skse64\GameStreams.h">
+    <ClInclude Include="..\skse64-gog\skse64\GameStreams.h">
       <Filter>SKSE64</Filter>
     </ClInclude>
-    <ClInclude Include="..\skse64\skse64\GameTypes.h">
+    <ClInclude Include="..\skse64-gog\skse64\GameTypes.h">
       <Filter>SKSE64</Filter>
     </ClInclude>
-    <ClInclude Include="..\skse64\skse64\GameUtilities.h">
+    <ClInclude Include="..\skse64-gog\skse64\GameUtilities.h">
       <Filter>SKSE64</Filter>
     </ClInclude>
-    <ClInclude Include="..\skse64\skse64\HashUtil.h">
+    <ClInclude Include="..\skse64-gog\skse64\HashUtil.h">
       <Filter>SKSE64</Filter>
     </ClInclude>
-    <ClInclude Include="..\skse64\skse64\NiObjects.h">
+    <ClInclude Include="..\skse64-gog\skse64\NiObjects.h">
       <Filter>SKSE64</Filter>
     </ClInclude>
-    <ClInclude Include="..\skse64\skse64\NiTypes.h">
+    <ClInclude Include="..\skse64-gog\skse64\NiTypes.h">
       <Filter>SKSE64</Filter>
     </ClInclude>
     <ClInclude Include="Hooks.h" />
-    <ClInclude Include="..\skse64\xbyak\xbyak.h">
+    <ClInclude Include="..\skse64-gog\xbyak\xbyak.h">
       <Filter>Xbyak</Filter>
     </ClInclude>
-    <ClInclude Include="..\skse64\xbyak\xbyak_bin2hex.h">
+    <ClInclude Include="..\skse64-gog\xbyak\xbyak_bin2hex.h">
       <Filter>Xbyak</Filter>
     </ClInclude>
-    <ClInclude Include="..\skse64\xbyak\xbyak_mnemonic.h">
+    <ClInclude Include="..\skse64-gog\xbyak\xbyak_mnemonic.h">
       <Filter>Xbyak</Filter>
     </ClInclude>
-    <ClInclude Include="..\skse64\xbyak\xbyak_util.h">
+    <ClInclude Include="..\skse64-gog\xbyak\xbyak_util.h">
       <Filter>Xbyak</Filter>
     </ClInclude>
-    <ClInclude Include="..\skse64\skse64\GameReferences.h">
+    <ClInclude Include="..\skse64-gog\skse64\GameReferences.h">
       <Filter>SKSE64</Filter>
     </ClInclude>
-    <ClInclude Include="..\skse64\skse64\GameBSExtraData.h">
+    <ClInclude Include="..\skse64-gog\skse64\GameBSExtraData.h">
       <Filter>SKSE64</Filter>
     </ClInclude>
-    <ClInclude Include="..\skse64\skse64\GameExtraData.h">
+    <ClInclude Include="..\skse64-gog\skse64\GameExtraData.h">
       <Filter>SKSE64</Filter>
     </ClInclude>
-    <ClInclude Include="..\skse64\skse64\GameSettings.h">
+    <ClInclude Include="..\skse64-gog\skse64\GameSettings.h">
       <Filter>SKSE64</Filter>
     </ClInclude>
-    <ClInclude Include="..\skse64\skse64\PluginAPI.h">
+    <ClInclude Include="..\skse64-gog\skse64\PluginAPI.h">
       <Filter>SKSE64</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FuzRoDohInternals.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="..\skse64\skse64\GameAPI.cpp">
+    <ClCompile Include="..\skse64-gog\skse64\GameAPI.cpp">
       <Filter>SKSE64</Filter>
     </ClCompile>
-    <ClCompile Include="..\skse64\skse64\GameData.cpp">
+    <ClCompile Include="..\skse64-gog\skse64\GameData.cpp">
       <Filter>SKSE64</Filter>
     </ClCompile>
-    <ClCompile Include="..\skse64\skse64\GameFormComponents.cpp">
+    <ClCompile Include="..\skse64-gog\skse64\GameFormComponents.cpp">
       <Filter>SKSE64</Filter>
     </ClCompile>
-    <ClCompile Include="..\skse64\skse64\GameForms.cpp">
+    <ClCompile Include="..\skse64-gog\skse64\GameForms.cpp">
       <Filter>SKSE64</Filter>
     </ClCompile>
-    <ClCompile Include="..\skse64\skse64\GameObjects.cpp">
+    <ClCompile Include="..\skse64-gog\skse64\GameObjects.cpp">
       <Filter>SKSE64</Filter>
     </ClCompile>
-    <ClCompile Include="..\skse64\skse64\GameRTTI.cpp">
+    <ClCompile Include="..\skse64-gog\skse64\GameRTTI.cpp">
       <Filter>SKSE64</Filter>
     </ClCompile>
-    <ClCompile Include="..\skse64\skse64\GameStreams.cpp">
+    <ClCompile Include="..\skse64-gog\skse64\GameStreams.cpp">
       <Filter>SKSE64</Filter>
     </ClCompile>
-    <ClCompile Include="..\skse64\skse64\GameTypes.cpp">
+    <ClCompile Include="..\skse64-gog\skse64\GameTypes.cpp">
       <Filter>SKSE64</Filter>
     </ClCompile>
-    <ClCompile Include="..\skse64\skse64\GameUtilities.cpp">
+    <ClCompile Include="..\skse64-gog\skse64\GameUtilities.cpp">
       <Filter>SKSE64</Filter>
     </ClCompile>
-    <ClCompile Include="..\skse64\skse64\HashUtil.cpp">
+    <ClCompile Include="..\skse64-gog\skse64\HashUtil.cpp">
       <Filter>SKSE64</Filter>
     </ClCompile>
-    <ClCompile Include="..\skse64\skse64\NiObjects.cpp">
+    <ClCompile Include="..\skse64-gog\skse64\NiObjects.cpp">
       <Filter>SKSE64</Filter>
     </ClCompile>
-    <ClCompile Include="..\skse64\skse64\NiTypes.cpp">
+    <ClCompile Include="..\skse64-gog\skse64\NiTypes.cpp">
       <Filter>SKSE64</Filter>
     </ClCompile>
     <ClCompile Include="Hooks.cpp" />
-    <ClCompile Include="..\skse64\skse64\GameReferences.cpp">
+    <ClCompile Include="..\skse64-gog\skse64\GameReferences.cpp">
       <Filter>SKSE64</Filter>
     </ClCompile>
-    <ClCompile Include="..\skse64\skse64\GameBSExtraData.cpp">
+    <ClCompile Include="..\skse64-gog\skse64\GameBSExtraData.cpp">
       <Filter>SKSE64</Filter>
     </ClCompile>
-    <ClCompile Include="..\skse64\skse64\GameExtraData.cpp">
+    <ClCompile Include="..\skse64-gog\skse64\GameExtraData.cpp">
       <Filter>SKSE64</Filter>
     </ClCompile>
-    <ClCompile Include="..\skse64\skse64\GameSettings.cpp">
+    <ClCompile Include="..\skse64-gog\skse64\GameSettings.cpp">
       <Filter>SKSE64</Filter>
     </ClCompile>
   </ItemGroup>
