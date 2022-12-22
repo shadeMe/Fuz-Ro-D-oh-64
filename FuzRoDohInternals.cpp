@@ -20,7 +20,7 @@ SME::INI::INISetting	kWordsPerSecondSilence("WordsPerSecondSilence",
 SME::INI::INISetting	kWideCharacterPerWord("WideCharacterPerWord",
 												"General",
 												"In Chinese, Japanese, Korean and other wide character languages, how many wide characters are regarded as a word",
-												(SInt32)4);
+												(SInt32)3);
 
 SME::INI::INISetting	kSkipEmptyResponses("SkipEmptyResponses",
 											"General",
