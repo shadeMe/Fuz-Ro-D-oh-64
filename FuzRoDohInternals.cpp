@@ -17,6 +17,11 @@ SME::INI::INISetting	kWordsPerSecondSilence("WordsPerSecondSilence",
 											   "Number of words a second of silent voice can \"hold\"",
 											   (SInt32)2);
 
+SME::INI::INISetting	kWideCharacterPerWord("WideCharacterPerWord",
+												"General",
+												"In Chinese, Japanese, Korean and other wide character languages, how many wide characters are regarded as a word",
+												(SInt32)4);
+
 SME::INI::INISetting	kSkipEmptyResponses("SkipEmptyResponses",
 											"General",
 											"Don't play back silent dialog for empty dialog responses",
@@ -58,6 +63,7 @@ void FuzRoDohINIManager::Initialize(const char* INIPath, void* Paramenter)
 	INIStream.clear();
 
 	RegisterSetting(&kWordsPerSecondSilence);
+	RegisterSetting(&kWideCharacterPerWord);
 	RegisterSetting(&kSkipEmptyResponses);
 
 	if (CreateINI)
