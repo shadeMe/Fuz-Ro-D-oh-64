@@ -73,6 +73,7 @@ void SneakAtackVoicePath(CachedResponseData* Data, char* VoicePathBuffer)
 #endif
 	{
 		static const int kWordsPerSecond = kWordsPerSecondSilence.GetData().i;
+		static const int kCharacterPerWord = kWideCharacterPerWord.GetData().i;
 		static const int kMaxSeconds = 10;
 
 		int SecondsOfSilence = 2;
@@ -81,11 +82,29 @@ void SneakAtackVoicePath(CachedResponseData* Data, char* VoicePathBuffer)
 
 		if (ResponseText.length() > 4 && strncmp(ResponseText.c_str(), "<ID=", 4))
 		{
-			SME::StringHelpers::Tokenizer TextParser(ResponseText.c_str(), " ");
 			int WordCount = 0;
-
-			while (TextParser.NextToken(ResponseText) != -1)
-				WordCount++;
+			int WideCharCount = 0;
+			int CharOver = 0;
+			for (char ch : ResponseText) // check each character
+			{
+				if (CharOver > 0) // this char is part of a wide-character, pass it
+				{
+					CharOver --;
+					continue;
+				}
+				if (ch & 0x80 && ch & 0x40 && ch & 0x20)
+				{
+					if (ch & 0x10)
+						CharOver = 3; // a 4 wide-character, 3 bytes left
+					else
+						CharOver = 2; // a 3 wide-character, 2 bytes left
+					WideCharCount ++;
+					// What about 2 wide-character? These "2 wide-character languages" basically use spaces to separate words by my google
+				}
+				else
+					WordCount += (ch == ' ');
+			}
+			WordCount += (WideCharCount / kCharacterPerWord);
 
 			SecondsOfSilence = WordCount / ((kWordsPerSecond > 0) ? kWordsPerSecond : 2) + 1;
 
