@@ -95,20 +95,14 @@ void SneakAtackVoicePath(CachedResponseData* Data, char* VoicePathBuffer)
 				if (ch & 0x80 && ch & 0x40 && ch & 0x20)
 				{
 					if (ch & 0x10)
-					{
 						CharOver = 3; // a 4 wide-character, 3 bytes left
-					}
 					else
-					{
 						CharOver = 2; // a 3 wide-character, 2 bytes left
-					}
 					WideCharCount ++;
 					// What about 2 wide-character? These "2 wide-character languages" basically use spaces to separate words by my google
 				}
 				else
-				{
 					WordCount += (ch == ' ');
-				}
 			}
 			WordCount += (WideCharCount / kCharacterPerWord);
 
