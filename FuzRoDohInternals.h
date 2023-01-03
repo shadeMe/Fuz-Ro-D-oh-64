@@ -28,6 +28,7 @@ namespace interfaces
 
 
 extern SME::INI::INISetting				kWordsPerSecondSilence;
+extern SME::INI::INISetting				kWideCharacterPerWord;
 extern SME::INI::INISetting				kSkipEmptyResponses;
 
 #define MAKE_RVA(addr)		addr - 0x140000000i64
