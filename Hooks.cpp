@@ -8,6 +8,7 @@ namespace hookedAddresses
 	// E8 ? ? ? ? 48 8B F8 EB 02 33 FF 48 85 FF
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	RelocAddr<uintptr_t>	kCachedResponseData_Ctor(MAKE_RVA(0x00000001405E08E0));
 =======
 	RelocAddr<uintptr_t>	kCachedResponseData_Ctor(MAKE_RVA(0x0000000140590C40));
@@ -15,10 +16,17 @@ namespace hookedAddresses
 =======
 	RelocAddr<uintptr_t>	kCachedResponseData_Ctor(MAKE_RVA(0x00000001405E08E0));
 >>>>>>> e7b5909 (Tick version)
+=======
+	RelocAddr<uintptr_t>	kCachedResponseData_Ctor(MAKE_RVA(0x00000001405E08E0));
+=======
+	RelocAddr<uintptr_t>	kCachedResponseData_Ctor(MAKE_RVA(0x00000001405DDB80));
+>>>>>>> 7cd8e7a (Add support for runtime v1.6.1130)
+>>>>>>> 4edac1c (Add support for runtime v1.6.1130)
 	uintptr_t				kCachedResponseData_Ctor_Hook = kCachedResponseData_Ctor + 0xEC;
 	uintptr_t				kCachedResponseData_Ctor_Ret = kCachedResponseData_Ctor + 0xF1;
 
 	// E8 ? ? ? ? 8B 06 EB 09
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	RelocAddr<uintptr_t>	kUIUtils_QueueDialogSubtitles(MAKE_RVA(0x0000000140978930));
@@ -28,11 +36,18 @@ namespace hookedAddresses
 =======
 	RelocAddr<uintptr_t>	kUIUtils_QueueDialogSubtitles(MAKE_RVA(0x0000000140978930));
 >>>>>>> e7b5909 (Tick version)
+=======
+	RelocAddr<uintptr_t>	kUIUtils_QueueDialogSubtitles(MAKE_RVA(0x0000000140978930));
+=======
+	RelocAddr<uintptr_t>	kUIUtils_QueueDialogSubtitles(MAKE_RVA(0x00000001409772B0));
+>>>>>>> 7cd8e7a (Add support for runtime v1.6.1130)
+>>>>>>> 4edac1c (Add support for runtime v1.6.1130)
 	uintptr_t				kUIUtils_QueueDialogSubtitles_Hook = kUIUtils_QueueDialogSubtitles + 0x4D;
 	uintptr_t				kUIUtils_QueueDialogSubtitles_Show = kUIUtils_QueueDialogSubtitles + 0x5A;
 	uintptr_t				kUIUtils_QueueDialogSubtitles_Exit = kUIUtils_QueueDialogSubtitles + 0x103;
 
 	// E8 ? ? ? ? 84 C0 75 42 48 8B 35 ? ? ? ?
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	RelocAddr<uintptr_t>	kASCM_DisplayQueuedNPCChatterData(MAKE_RVA(0x000000014096EC80));
@@ -42,6 +57,12 @@ namespace hookedAddresses
 =======
 	RelocAddr<uintptr_t>	kASCM_DisplayQueuedNPCChatterData(MAKE_RVA(0x000000014096EC80));
 >>>>>>> e7b5909 (Tick version)
+=======
+	RelocAddr<uintptr_t>	kASCM_DisplayQueuedNPCChatterData(MAKE_RVA(0x000000014096EC80));
+=======
+	RelocAddr<uintptr_t>	kASCM_DisplayQueuedNPCChatterData(MAKE_RVA(0x000000014096D600));
+>>>>>>> 7cd8e7a (Add support for runtime v1.6.1130)
+>>>>>>> 4edac1c (Add support for runtime v1.6.1130)
 	uintptr_t				kASCM_DisplayQueuedNPCChatterData_DialogSubs_Hook = kASCM_DisplayQueuedNPCChatterData + 0x1CA;
 	uintptr_t				kASCM_DisplayQueuedNPCChatterData_DialogSubs_Show = kASCM_DisplayQueuedNPCChatterData + 0x1D3;
 	uintptr_t				kASCM_DisplayQueuedNPCChatterData_DialogSubs_Exit = kASCM_DisplayQueuedNPCChatterData + 0x1FD;
@@ -53,6 +74,7 @@ namespace hookedAddresses
 	// E8 ? ? ? ? F3 0F 10 35 ? ? ? ? 48 8D 4E 28
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	RelocAddr<uintptr_t>	kASCM_QueueNPCChatterData(MAKE_RVA(0x000000014096E5D0));
 =======
 	RelocAddr<uintptr_t>	kASCM_QueueNPCChatterData(MAKE_RVA(0x000000014090D8C0));
@@ -60,6 +82,12 @@ namespace hookedAddresses
 =======
 	RelocAddr<uintptr_t>	kASCM_QueueNPCChatterData(MAKE_RVA(0x00000001402D9E58));
 >>>>>>> e7b5909 (Tick version)
+=======
+	RelocAddr<uintptr_t>	kASCM_QueueNPCChatterData(MAKE_RVA(0x00000001402D9E58));
+=======
+	RelocAddr<uintptr_t>	kASCM_QueueNPCChatterData(MAKE_RVA(0x000000014096CF50));
+>>>>>>> 7cd8e7a (Add support for runtime v1.6.1130)
+>>>>>>> 4edac1c (Add support for runtime v1.6.1130)
 	uintptr_t				kASCM_QueueNPCChatterData_Hook = kASCM_QueueNPCChatterData + 0x85;
 	uintptr_t				kASCM_QueueNPCChatterData_Show = kASCM_QueueNPCChatterData + 0x92;
 	uintptr_t				kASCM_QueueNPCChatterData_Exit = kASCM_QueueNPCChatterData + 0xCA;
