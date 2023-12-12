@@ -14,7 +14,7 @@
 #define STRINGIZE(s) STRINGIZE2(s)
 
 #define VERSION_MAJOR               2
-#define VERSION_MINOR               3
+#define VERSION_MINOR               4
 
 #define VER_COMPANYNAME_STR         "Imitation Camel"
 #define VER_FILE_DESCRIPTION_STR    "A plugin for the Skyrim Script Extender 64"
