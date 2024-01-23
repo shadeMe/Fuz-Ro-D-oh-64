@@ -77,6 +77,7 @@ public:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	DEFINE_MEMBER_FN(Ctor, BSIStream*, MAKE_RVA(0x0000000140E20C10), const char* FilePath, void* ParentLocation);
 =======
 	DEFINE_MEMBER_FN(Ctor, BSIStream*, MAKE_RVA(0x0000000140D927F0), const char* FilePath, void* ParentLocation);
@@ -85,11 +86,19 @@ public:
 	DEFINE_MEMBER_FN(Ctor, BSIStream*, MAKE_RVA(0x0000000140E20C10), const char* FilePath, void* ParentLocation);
 >>>>>>> e7b5909 (Tick version)
 =======
+=======
+>>>>>>> d2b2aba (Add support for runtime 1.6.1170)
 	DEFINE_MEMBER_FN(Ctor, BSIStream*, MAKE_RVA(0x0000000140E20C10), const char* FilePath, void* ParentLocation);
 =======
 	DEFINE_MEMBER_FN(Ctor, BSIStream*, MAKE_RVA(0x0000000140E1A9B0), const char* FilePath, void* ParentLocation);
 >>>>>>> 7cd8e7a (Add support for runtime v1.6.1130)
+<<<<<<< HEAD
 >>>>>>> 4edac1c (Add support for runtime v1.6.1130)
+=======
+=======
+	DEFINE_MEMBER_FN(Ctor, BSIStream*, MAKE_RVA(0x0000000140E1F1F0), const char* FilePath, void* ParentLocation);
+>>>>>>> 13057d6 (Add support for runtime 1.6.1170)
+>>>>>>> d2b2aba (Add support for runtime 1.6.1170)
 
 	// members
 	///*00*/ void**					vtbl;
