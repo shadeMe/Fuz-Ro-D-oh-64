@@ -74,10 +74,14 @@ extern "C"
 		0,	// Version-dependent
 		0,
 <<<<<<< HEAD
+<<<<<<< HEAD
 		{ RUNTIME_VERSION_1_6_1179_GOG, 0 },
 =======
 		{ RUNTIME_VERSION_1_6_659_GOG, 0 },
 >>>>>>> 0fb2581 (Add support for GOG edition 1.6.659)
+=======
+		{ RUNTIME_VERSION_1_6_1179_GOG, 0 },
+>>>>>>> e7b5909 (Tick version)
 		0,
 	};
 };
