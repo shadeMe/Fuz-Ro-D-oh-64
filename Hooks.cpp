@@ -6,18 +6,18 @@
 namespace hookedAddresses
 {
 	// E8 ? ? ? ? 48 8B F8 EB 02 33 FF 48 85 FF
-	RelocAddr<uintptr_t>	kCachedResponseData_Ctor(MAKE_RVA(0x0000000140590C40));
+	RelocAddr<uintptr_t>	kCachedResponseData_Ctor(MAKE_RVA(0x00000001405E08E0));
 	uintptr_t				kCachedResponseData_Ctor_Hook = kCachedResponseData_Ctor + 0xEC;
 	uintptr_t				kCachedResponseData_Ctor_Ret = kCachedResponseData_Ctor + 0xF1;
 
 	// E8 ? ? ? ? 8B 06 EB 09
-	RelocAddr<uintptr_t>	kUIUtils_QueueDialogSubtitles(MAKE_RVA(0x0000000140917C20));
+	RelocAddr<uintptr_t>	kUIUtils_QueueDialogSubtitles(MAKE_RVA(0x0000000140978930));
 	uintptr_t				kUIUtils_QueueDialogSubtitles_Hook = kUIUtils_QueueDialogSubtitles + 0x4D;
 	uintptr_t				kUIUtils_QueueDialogSubtitles_Show = kUIUtils_QueueDialogSubtitles + 0x5A;
 	uintptr_t				kUIUtils_QueueDialogSubtitles_Exit = kUIUtils_QueueDialogSubtitles + 0x103;
 
 	// E8 ? ? ? ? 84 C0 75 42 48 8B 35 ? ? ? ?
-	RelocAddr<uintptr_t>	kASCM_DisplayQueuedNPCChatterData(MAKE_RVA(0x000000014090DF70));
+	RelocAddr<uintptr_t>	kASCM_DisplayQueuedNPCChatterData(MAKE_RVA(0x000000014096EC80));
 	uintptr_t				kASCM_DisplayQueuedNPCChatterData_DialogSubs_Hook = kASCM_DisplayQueuedNPCChatterData + 0x1CA;
 	uintptr_t				kASCM_DisplayQueuedNPCChatterData_DialogSubs_Show = kASCM_DisplayQueuedNPCChatterData + 0x1D3;
 	uintptr_t				kASCM_DisplayQueuedNPCChatterData_DialogSubs_Exit = kASCM_DisplayQueuedNPCChatterData + 0x1FD;
@@ -27,7 +27,7 @@ namespace hookedAddresses
 	uintptr_t				kASCM_DisplayQueuedNPCChatterData_GeneralSubs_Exit = kASCM_DisplayQueuedNPCChatterData + 0x1CA;
 
 	// E8 ? ? ? ? F3 0F 10 35 ? ? ? ? 48 8D 4E 28
-	RelocAddr<uintptr_t>	kASCM_QueueNPCChatterData(MAKE_RVA(0x000000014090D8C0));
+	RelocAddr<uintptr_t>	kASCM_QueueNPCChatterData(MAKE_RVA(0x00000001402D9E58));
 	uintptr_t				kASCM_QueueNPCChatterData_Hook = kASCM_QueueNPCChatterData + 0x85;
 	uintptr_t				kASCM_QueueNPCChatterData_Show = kASCM_QueueNPCChatterData + 0x92;
 	uintptr_t				kASCM_QueueNPCChatterData_Exit = kASCM_QueueNPCChatterData + 0xCA;
@@ -73,6 +73,7 @@ void SneakAtackVoicePath(CachedResponseData* Data, char* VoicePathBuffer)
 #endif
 	{
 		static const int kWordsPerSecond = kWordsPerSecondSilence.GetData().i;
+		static const int kCharacterPerWord = kWideCharacterPerWord.GetData().i;
 		static const int kMaxSeconds = 10;
 
 		int SecondsOfSilence = 2;
@@ -81,11 +82,29 @@ void SneakAtackVoicePath(CachedResponseData* Data, char* VoicePathBuffer)
 
 		if (ResponseText.length() > 4 && strncmp(ResponseText.c_str(), "<ID=", 4))
 		{
-			SME::StringHelpers::Tokenizer TextParser(ResponseText.c_str(), " ");
 			int WordCount = 0;
-
-			while (TextParser.NextToken(ResponseText) != -1)
-				WordCount++;
+			int WideCharCount = 0;
+			int CharOver = 0;
+			for (char ch : ResponseText) // check each character
+			{
+				if (CharOver > 0) // this char is part of a wide-character, pass it
+				{
+					CharOver --;
+					continue;
+				}
+				if (ch & 0x80 && ch & 0x40 && ch & 0x20)
+				{
+					if (ch & 0x10)
+						CharOver = 3; // a 4 wide-character, 3 bytes left
+					else
+						CharOver = 2; // a 3 wide-character, 2 bytes left
+					WideCharCount ++;
+					// What about 2 wide-character? These "2 wide-character languages" basically use spaces to separate words by my google
+				}
+				else
+					WordCount += (ch == ' ');
+			}
+			WordCount += (WideCharCount / kCharacterPerWord);
 
 			SecondsOfSilence = WordCount / ((kWordsPerSecond > 0) ? kWordsPerSecond : 2) + 1;
 

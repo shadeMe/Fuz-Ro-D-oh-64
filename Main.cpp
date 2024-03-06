@@ -73,7 +73,7 @@ extern "C"
 		"",
 		0,	// Version-dependent
 		0,
-		{ RUNTIME_VERSION_1_6_659_GOG, 0 },
+		{ RUNTIME_VERSION_1_6_1179_GOG, 0 },
 		0,
 	};
 };

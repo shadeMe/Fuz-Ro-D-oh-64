@@ -28,6 +28,7 @@ namespace interfaces
 
 
 extern SME::INI::INISetting				kWordsPerSecondSilence;
+extern SME::INI::INISetting				kWideCharacterPerWord;
 extern SME::INI::INISetting				kSkipEmptyResponses;
 
 #define MAKE_RVA(addr)		addr - 0x140000000i64
@@ -73,7 +74,7 @@ public:
 	MEMBER_FN_PREFIX(BSIStream);
 
 	// E8 ? ? ? ? 90 33 DB 38 5C 24 38
-	DEFINE_MEMBER_FN(Ctor, BSIStream*, MAKE_RVA(0x0000000140D927F0), const char* FilePath, void* ParentLocation);
+	DEFINE_MEMBER_FN(Ctor, BSIStream*, MAKE_RVA(0x0000000140E20C10), const char* FilePath, void* ParentLocation);
 
 	// members
 	///*00*/ void**					vtbl;
