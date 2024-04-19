@@ -78,6 +78,7 @@ public:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	DEFINE_MEMBER_FN(Ctor, BSIStream*, MAKE_RVA(0x0000000140E20C10), const char* FilePath, void* ParentLocation);
 =======
 	DEFINE_MEMBER_FN(Ctor, BSIStream*, MAKE_RVA(0x0000000140D927F0), const char* FilePath, void* ParentLocation);
@@ -88,6 +89,8 @@ public:
 =======
 =======
 >>>>>>> d2b2aba (Add support for runtime 1.6.1170)
+=======
+>>>>>>> e0ee979 (Update FuzRoDohInternals.h)
 	DEFINE_MEMBER_FN(Ctor, BSIStream*, MAKE_RVA(0x0000000140E20C10), const char* FilePath, void* ParentLocation);
 =======
 	DEFINE_MEMBER_FN(Ctor, BSIStream*, MAKE_RVA(0x0000000140E1A9B0), const char* FilePath, void* ParentLocation);
@@ -98,7 +101,13 @@ public:
 =======
 	DEFINE_MEMBER_FN(Ctor, BSIStream*, MAKE_RVA(0x0000000140E1F1F0), const char* FilePath, void* ParentLocation);
 >>>>>>> 13057d6 (Add support for runtime 1.6.1170)
+<<<<<<< HEAD
 >>>>>>> d2b2aba (Add support for runtime 1.6.1170)
+=======
+=======
+	DEFINE_MEMBER_FN(Ctor, BSIStream*, MAKE_RVA(0x0000000140E20C10), const char* FilePath, void* ParentLocation);
+>>>>>>> 9c3db7b (Update FuzRoDohInternals.h)
+>>>>>>> e0ee979 (Update FuzRoDohInternals.h)
 
 	// members
 	///*00*/ void**					vtbl;
