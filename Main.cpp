@@ -73,7 +73,7 @@ extern "C"
 		"",
 		0,	// Version-dependent
 		0,
-		{ RUNTIME_VERSION_1_6_1170, 0 },
+		{ RUNTIME_VERSION_1_7_104, 0 },
 		0,
 	};
 };
